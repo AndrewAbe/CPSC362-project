@@ -2,6 +2,6 @@
 
 Team:
 
-Andrew/n
-Albert/n
-Cristian/n
+Andrew\n
+Albert\n
+Cristian\n
