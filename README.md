@@ -1,3 +1,7 @@
 # CPSC362-project
 
-test
+Team:
+
+Andrew
+Albert 
+Cristian
