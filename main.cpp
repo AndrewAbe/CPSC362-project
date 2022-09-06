@@ -10,11 +10,16 @@ using namespace std;
 
 // Main
 int main() {
-    
-    
-    cout << "main";
+
+    Item Orange (1, 1);
+    float i = Orange.getPurchaseCost();
+    float j = Orange.getQuantity();
+    cout << "Orange is purchase cost " << i << " and has quantity of " << j << "\n";
+
+    Item Lemon;
+    float a = Lemon.getPurchaseCost();
+    float b = Lemon.getQuantity();
+    cout << "Orange is purchase cost " << a << " and has quantity of " << b << "\n";
 
     return 0;
 }
-
-// this is a comment - albert
