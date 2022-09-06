@@ -1,19 +1,24 @@
 #include <iostream>
 #include <string>
-#include <map>
 
-template <typename Key, typename Value>
 class Item {
 public:
-    Item() = default;
+    Item() {
+        _PurchaseCost = 0.01;
+        _Quantity = 100;
+    };
+    Item(float x, float y) {
+        _PurchaseCost = x;
+        _Quantity = y;
+    };
     float getPurchaseCost() {
-        return _PurchaseCost();
+        return _PurchaseCost;
     }
     float getQuantity() {
-        return _Quantity();
+        return _Quantity;
     }
 
 private:
-    float _PurchaseCost = '1';
-    float _Quantity = '10';
+    float _PurchaseCost;
+    float _Quantity;
 };
