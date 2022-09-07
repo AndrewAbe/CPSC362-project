@@ -3,28 +3,40 @@
 
 class Item {
 public:
+    //constructors
     Item() {
         _SellPrice = 0.5;
         _PurchaseCost = 0.01;
         _Quantity = 100;
     };
-    Item(float x, float y, float z) {
+    Item(double x, double y, double z) {
         _SellPrice = x;
         _PurchaseCost = y;
         _Quantity = z;
     };
-    float getSellPrice() {
+    //get private variables
+    double getSellPrice() {
         return _SellPrice;
     }
-    float getPurchaseCost() {
+    double getPurchaseCost() {
         return _PurchaseCost;
     }
-    float getQuantity() {
+    double getQuantity() {
         return _Quantity;
     }
+    //set functions
+    void setSellPrice(double price) {
+        _SellPrice = price;
+    };
+    void setPurchaseCost(double cost) {
+        _PurchaseCost = cost;
+    };
+    void setQuantity(double quantity) {
+        _Quantity = quantity;
+    };
 
 private:
-    float _SellPrice;
-    float _PurchaseCost;
-    float _Quantity;
+    double _SellPrice;
+    double _PurchaseCost;
+    double _Quantity;
 };
