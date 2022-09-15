@@ -10,9 +10,17 @@ using namespace std;
 
 // Main
 int main() {
-    
-    
-    cout << "main";
+
+    int x;
+    cout << "1. Product and Prices\n";
+    cout << "2. Item Invenory\n";
+    cout << "3. End of Day\n";
+    cout << "4. Total Costs\n";
+
+    cout << "\n\n\n\n\n\n\n\n\n\n\n";
+
+    cout << " Please input your numerical selection\n ";
+    cin >> x;
 
     return 0;
 }
