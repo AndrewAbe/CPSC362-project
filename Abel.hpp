@@ -40,3 +40,5 @@ private:
     double _PurchaseCost;
     double _Quantity;
 };
+
+// this is a comment
