@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Item {
 public:
     //constructors
@@ -34,11 +36,15 @@ public:
     void setQuantity(double quantity) {
         _Quantity = quantity;
     };
+    //print
+    void print() {
+        cout << "Orange is sold at " << getSellPrice() <<
+            " purchased at " << getPurchaseCost() <<
+            " and has quantity of " << getQuantity() << "\n";
+    }
 
 private:
     double _SellPrice;
     double _PurchaseCost;
     double _Quantity;
 };
-
-// this is a comment
