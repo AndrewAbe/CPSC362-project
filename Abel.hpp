@@ -70,41 +70,29 @@ void printVec(vector<Item>& list) {
     }
 }
 
-/*
-void openexcel(string a, vector<Item>& list) {
-    string fname = a; 
 
-    vector<Item> list;
+void openexcel(string fname, vector<Item>& list) {
     string line;
 
     fstream file(fname, ios::in);
-    if (file.is_open())
-    {
+    if (file.is_open()) {
         //get first line to skip since it has headers
         getline(file, line);
+        string ItemName, SellPrice, PurPrice, Inventory, TotalName, ActualTotalNum; //last 2 are for inherented function
         //cout << line;  //works
-        string ItemName, SellPrice, PurPrice, Inventory;
-        stringstream str(line);
-        getline(str, ItemName, ',');
-        getline(str, SellPrice, ',');
-        getline(str, PurPrice, ',');
-        getline(str, Inventory, ',');
-        Item Orange(ItemName, stod(SellPrice), stod(PurPrice), stod(Inventory));
-         
-        /*
-        while (getline(file, line))
-        {
+        while (getline(file, line)) {
             stringstream str(line);
-            string ItemName, SellPrice, PurPrice, Inventory;
             getline(str, ItemName, ',');
             getline(str, SellPrice, ',');
             getline(str, PurPrice, ',');
             getline(str, Inventory, ',');
-            Item Orange(ItemName
-            //Orange.print();
-        } *//*
+            Item itemi(ItemName, stod(SellPrice), stod(PurPrice), stod(Inventory));
+            list.push_back(itemi);
+        }
+        //cout << "list size " << list.size() << "\n";  //use when testing
+        printVec(list);  //use when testing
     }
-    else
+    else {
         cout << "Could not open the file\n";
+    }
 }
-*/
