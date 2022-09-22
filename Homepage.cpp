@@ -1,15 +1,25 @@
-
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <iomanip>
+#include "First Page.h"
+#include "Second Page.h"
+
 using namespace std;
+int firstpage();
+int secondpage();
 
 
 int main()
 {
+
     cout << "StoreMore v1.0\n\n";
     int x;
 
-    std::cout << "1. Product and Prices\n";
-    std::cout << "2. Item Invenory\n";
+    std::cout << "1. List of Product and Prices\n";
+    std::cout << "2. Setting Prices\n";
     std::cout << "3. End of Day\n";
     std::cout << "4. Total Costs\n";
    
@@ -25,12 +35,12 @@ int main()
         }
         if (x == 1) {
             cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            cout << " Will jump to Option 1" << endl;
+            return firstpage();
 
         }
         if (x == 2) {
             cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            cout << " Will jump to Option 2" << endl;
+            return secondpage();
         }
         if (x == 3) {
             cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -41,4 +51,3 @@ int main()
             cout << " Will jump to Option 4" << endl;
         }
 }
-
