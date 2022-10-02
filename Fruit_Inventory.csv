@@ -1,4 +1,6 @@
-Product,Sell Price,Buy Price,Inventory,Total,0
+Product,Sell Price,Buy Price,Inventory,Monetary Sum,0.79
+,,,,,
+Perishables,,,,,
 Apples,0.5,0.3,100,,
 Bananas,0.5,0.25,80,,
 Blueberries,10,4,100,,
@@ -7,3 +9,9 @@ Lemons,0.75,0.35,110,,
 Oranges,1,0.5,90,,
 Mangos,3,1.5,70,,
 Watermelons,15,6,45,,
+,,,,,
+Non-Perishables,,,,,
+Twinkies ,4,1,1000,,
+Beef Jerky,10,2,20,,
+Canned bean,2,0.3,35,,
+Peanuts,5,0.75,50,,
