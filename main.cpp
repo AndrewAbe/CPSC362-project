@@ -13,13 +13,15 @@ using namespace std;
 int main() {
     string fname = "Fruit_Inventory.csv";
     vector<Item> list;
+    double tot = 0.0;
     //hardcode for ease can change back later
     //cout << "Enter the file name: ";
     //cin >> fname;
     
-    openexcel(fname, list);
+    openexcel(fname, list, tot);
     //Item item1 = list.at(0);
     //item1.print();
+    cout << "Total: " << tot << "\n";
     printVec(list);
 
     return 0;
