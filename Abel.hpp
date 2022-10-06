@@ -73,28 +73,63 @@ void printVec(vector<Item>& list) {
 }
 
 
-void openexcel(string fname, vector<Item>& list) {
+void openexcel(string fname, vector<Item>& list, double& tot) {
     string line;
 
     fstream file(fname, ios::in);
     if (file.is_open()) {
-        //get first line to skip since it has headers
+        //get first line with headers
         getline(file, line);
-        string ItemName, SellPrice, PurPrice, Inventory, TotalName, ActualTotalNum; //last 2 are for inherited function
-        //cout << line;  //works
+        string ItemName, SellPrice, PurPrice, Inventory, TotalName, ActualTotalNum;
+        stringstream str(line);
+        getline(str, ItemName, ',');
+        getline(str, SellPrice, ',');
+        getline(str, PurPrice, ',');
+        getline(str, Inventory, ',');
+        getline(str, TotalName, ',');
+        getline(str, ActualTotalNum, ',');
+        tot = stod(ActualTotalNum);  //puts the total into double tot
+        //cout << "first line " << line << " " << "total is: " << tot << "\n"; //works
+
+        getline(file, line); //get the space
+        //cout << "second line" << line << "\n";  //works
+
+        getline(file, line); //get the word parishable
+        //cout << "third line" << line << "\n"; //works
+
+
         while (getline(file, line)) {
-            stringstream str(line);
-            getline(str, ItemName, ',');
-            getline(str, SellPrice, ',');
-            getline(str, PurPrice, ',');
-            getline(str, Inventory, ',');
-            Item itemi(ItemName, stod(SellPrice), stod(PurPrice), stod(Inventory));
-            list.push_back(itemi);
+            if (line.size() > 5) { //size 5 is empty string from ,,,,, 
+                stringstream str(line);
+                getline(str, ItemName, ',');
+                //this line is to skip the non-perishable line but had to be placed in the middle of the grab functions, most efficient
+                if (ItemName == "Non-Perishables") {} else{ 
+                getline(str, SellPrice, ',');
+                getline(str, PurPrice, ',');
+                getline(str, Inventory, ',');
+                Item itemi(ItemName, stod(SellPrice), stod(PurPrice), stod(Inventory));
+                list.push_back(itemi);
+                }
+            }
         }
         //cout << "list size " << list.size() << "\n";  //use when testing
-        printVec(list);  //use when testing
+        //printVec(list);  //use when testing
     }
     else {
         cout << "Could not open the file\n";
     }
+}
+
+void endexcel(string fname, vector<Item> list, double tot) {
+    std::ofstream myfile;
+    myfile.open("Test_Inventory.csv");
+    myfile << "Product,Sell Price,Buy Price,Inventory,Monetary Sum," << tot << "\n";
+    myfile << "\n";
+    myfile << "Perishables \n";
+    for (int i = 0; i < list.size(); i++) {
+        myfile << list.at(i).getName() << "," << list.at(i).getSellPrice() << "," 
+            << list.at(i).getPurchaseCost() << "," << list.at(i).getQuantity() << "," << "\n";
+    }
+
+    myfile.close();
 }
