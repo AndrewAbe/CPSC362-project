@@ -80,7 +80,7 @@ void openexcel(string fname, vector<Item>& list) {
     if (file.is_open()) {
         //get first line to skip since it has headers
         getline(file, line);
-        string ItemName, SellPrice, PurPrice, Inventory, TotalName, ActualTotalNum; //last 2 are for inherented function
+        string ItemName, SellPrice, PurPrice, Inventory, TotalName, ActualTotalNum; //last 2 are for inherited function
         //cout << line;  //works
         while (getline(file, line)) {
             stringstream str(line);
