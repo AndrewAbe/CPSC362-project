@@ -39,91 +39,91 @@ int secondpage()
 
     if (selection == 1) {
         cout << "Please input the new price for each Apple: " << endl;
-        temp = list.at(0);
         cin >> value; 
-        temp.setSellPrice(value);
+        list.at(0).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
     if (selection == 2) {
         cout << "Please input the new price for each Bananas: " << endl;
-        temp = list.at(1);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(1).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
     if (selection == 3) {
         cout << "Please input the new price for each Blueberries: " << endl;
-        temp = list.at(2);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(2).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
     if (selection == 4) {
         cout << "Please input the new price for each Grapes: " << endl;
-        temp = list.at(3);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(3).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
     if (selection == 5) {
         cout << "Please input the new price for each Lemons: " << endl;
-        temp = list.at(4);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(4).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
     if (selection == 6) {
         cout << "Please input the new price for each Oranges: " << endl;
-        temp = list.at(5);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(5).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
     if (selection == 7) {
         cout << "Please input the new price for each Mangos: " << endl;
-        temp = list.at(6);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(6).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
 
     if (selection == 8) {
         cout << "Please input the new price for each Watermelons: " << endl;
-        temp = list.at(7);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(7).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
 
     if (selection == 9) {
         cout << "Please input the new price for each Twinkies: " << endl;
-        temp = list.at(8);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(8).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
 
     if (selection == 10) {
         cout << "Please input the new price for each Beef Jerky: " << endl;
-        temp = list.at(9);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(9).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
         
     if (selection == 11) {
         cout << "Please input the new price for each Canned Beans: " << endl;
-        temp = list.at(10);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(10).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
 
     if (selection == 12) {
         cout << "Please input the new price for each Peanuts: " << endl;
-        temp = list.at(11);
         cin >> value;
-        temp.setSellPrice(value);
+        list.at(11).setSellPrice(value);
+        endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
 
