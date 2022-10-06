@@ -56,7 +56,7 @@ int firstpage()
     int selection;
     std::cin >> selection;
 
-    cout << "\n\n\n\n\\n\n\n\n\n\n";
+    cout << "\n\n\n\n\n\n\n\n\n\n\n";
 
     if (selection == 0) {
         return main();
