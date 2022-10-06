@@ -112,10 +112,31 @@ void openexcel(string fname, vector<Item>& list, double& tot) {
                 }
             }
         }
-        cout << "list size " << list.size() << "\n";  //use when testing
-        printVec(list);  //use when testing
+        //cout << "list size " << list.size() << "\n";  //use when testing
+        //printVec(list);  //use when testing
     }
     else {
         cout << "Could not open the file\n";
     }
+}
+
+void endexcel(string fname, vector<Item> list, double tot) {
+    std::ofstream myfile;
+    myfile.open(fname);
+    //myfile.open("Test_Inventory.csv");   //testing works
+    myfile << "Product,Sell Price,Buy Price,Inventory,Monetary Sum," << tot << "\n";
+    myfile << "\n";
+    myfile << "Perishables\n";
+    for (int i = 0; i < 8; i++) {
+        myfile << list.at(i).getName() << "," << list.at(i).getSellPrice() << "," 
+            << list.at(i).getPurchaseCost() << "," << list.at(i).getQuantity() << "," << "\n";
+    }
+    myfile << "\n";
+    myfile << "Non-Perishables\n";
+    for (int i = 8; i < list.size(); i++) {
+        myfile << list.at(i).getName() << "," << list.at(i).getSellPrice() << ","
+            << list.at(i).getPurchaseCost() << "," << list.at(i).getQuantity() << "," << "\n";
+    }
+
+    myfile.close();
 }
