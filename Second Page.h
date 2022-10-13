@@ -6,6 +6,7 @@
 #include <sstream>
 #include <iomanip>
 #include "ItemClass.h"
+#include <Windows.h>
 
 
 using namespace std;
@@ -21,10 +22,15 @@ int secondpage()
 
     openexcel(fname, list, x);
 
-    
-    std::cout << "Please select the Item you wish to change the price for or input 0 to go back to the homepage:\n\n";
-    //update 
-    std::cout << "1.Apples\n2.Bananas\n3.Blueberries\n4.Grapes\n5.Lemons\n6.Oranges\n7.Mangos\n8.Watermelons\n9.Twinkies\n10.Beef Jerky\n11.Canned Beans\n12.Peanuts";
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    cout << "\n\n\n\n\n\n\n";
+
+    SetConsoleTextAttribute(h, 27);
+    std::cout << "Please select the Item you wish to change the price for or input 0 to go back to the homepage: ";
+    SetConsoleTextAttribute(h, 15);
+     
+    std::cout << "\n1.Apples\n2.Bananas\n3.Blueberries\n4.Grapes\n5.Lemons\n6.Oranges\n7.Mangos\n8.Watermelons\n9.Twinkies\n10.Beef Jerky\n11.Canned Beans\n12.Peanuts";
    
 
     cout << "\n\n\n\n";
@@ -40,6 +46,13 @@ int secondpage()
     if (selection == 1) {
         cout << "Please input the new price for each Apple: " << endl;
         cin >> value; 
+
+        /*if (value) {
+            cout << "PLEASE INPUT A CORRECT SELECTION";
+            cin >> value;
+            return secondpage();
+        }*/
+
         list.at(0).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();

@@ -4,18 +4,27 @@
 #include <vector>
 #include <sstream>
 #include <iomanip>
+#include <windows.h>
 #include "First Page.h"
 #include "Second Page.h"
+#include "Extra.h"
 
 using namespace std;
 int firstpage();
 int secondpage();
+int extrapage();
 
 
 int main()
 {
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+    
+    SetConsoleTextAttribute(h, 27);
+    cout << "StoreMore v1.0";
+  SetConsoleTextAttribute(h, 15);
 
-    cout << "StoreMore v1.0\n\n";
+    cout << " \n\n";
+
     int x;
 
     std::cout << "1. List of Product and Prices\n";
@@ -28,11 +37,7 @@ int main()
     std::cout << " Please input your numerical selection: ";
 
     std::cin >>x ;
-        if (x <= 0 || x >= 5) {
-            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
-            cout << "Invalid Selection! Please input a number between 1 and 4!\n" << endl;
-            main();
-        }
+       
         if (x == 1) {
             cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
             return firstpage();
@@ -49,5 +54,17 @@ int main()
         if (x == 4) {
             cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
             cout << " Will jump to Option 4" << endl;
+        }
+        if (x == 777) {
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            return extrapage();
+     
+        }
+        else {
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            SetConsoleTextAttribute(h, 4);
+            cout << "Invalid Selection! Please input a number between 1 and 4!\n" << endl;
+            SetConsoleTextAttribute(h, 15);
+            main();
         }
 }
