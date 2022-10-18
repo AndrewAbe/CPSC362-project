@@ -7,7 +7,7 @@
 #include <iomanip>
 #include "ItemClass.h"
 #include <Windows.h>
-
+#include <stdlib.h>
 
 using namespace std;
 int secondpage();
@@ -15,84 +15,78 @@ int main();
 
 int secondpage()
 {
+    system("CLS");
     string fname = "Fruit_Inventory.csv";
     vector<Item> list;
-    
+
     double x;
 
     openexcel(fname, list, x);
 
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    cout << "\n\n\n\n\n\n\n";
 
     SetConsoleTextAttribute(h, 27);
     std::cout << "Please select the Item you wish to change the price for or input 0 to go back to the homepage: ";
     SetConsoleTextAttribute(h, 15);
-     
+
     std::cout << "\n1.Apples\n2.Bananas\n3.Blueberries\n4.Grapes\n5.Lemons\n6.Oranges\n7.Mangos\n8.Watermelons\n9.Twinkies\n10.Beef Jerky\n11.Canned Beans\n12.Peanuts";
-   
+
 
     cout << "\n\n\n\n";
 
     std::cout << "Please input your selection: ";
 
-    int selection;
+    string selection;
     double value;
     std::cin >> selection;
     Item temp;
     cout << "\n\n\n\n\n\n\n\n\n\n\n";
 
-    if (selection == 1) {
+    if (selection == "1") {
         cout << "Please input the new price for each Apple: " << endl;
-        cin >> value; 
-
-        /*if (value) {
-            cout << "PLEASE INPUT A CORRECT SELECTION";
-            cin >> value;
-            return secondpage();
-        }*/
+        cin >> value;
 
         list.at(0).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
-    if (selection == 2) {
+    if (selection == "2") {
         cout << "Please input the new price for each Bananas: " << endl;
         cin >> value;
         list.at(1).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
-    if (selection == 3) {
+    if (selection == "3") {
         cout << "Please input the new price for each Blueberries: " << endl;
         cin >> value;
         list.at(2).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
-    if (selection == 4) {
+    if (selection == "4") {
         cout << "Please input the new price for each Grapes: " << endl;
         cin >> value;
         list.at(3).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
-    if (selection == 5) {
+    if (selection == "5") {
         cout << "Please input the new price for each Lemons: " << endl;
         cin >> value;
         list.at(4).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
-    if (selection == 6) {
+    if (selection == "6") {
         cout << "Please input the new price for each Oranges: " << endl;
         cin >> value;
         list.at(5).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
-    if (selection == 7) {
+    if (selection == "7") {
         cout << "Please input the new price for each Mangos: " << endl;
         cin >> value;
         list.at(6).setSellPrice(value);
@@ -100,7 +94,7 @@ int secondpage()
         return secondpage();
     }
 
-    if (selection == 8) {
+    if (selection == "8") {
         cout << "Please input the new price for each Watermelons: " << endl;
         cin >> value;
         list.at(7).setSellPrice(value);
@@ -108,7 +102,7 @@ int secondpage()
         return secondpage();
     }
 
-    if (selection == 9) {
+    if (selection == "9") {
         cout << "Please input the new price for each Twinkies: " << endl;
         cin >> value;
         list.at(8).setSellPrice(value);
@@ -116,15 +110,15 @@ int secondpage()
         return secondpage();
     }
 
-    if (selection == 10) {
+    if (selection == "10") {
         cout << "Please input the new price for each Beef Jerky: " << endl;
         cin >> value;
         list.at(9).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
-        
-    if (selection == 11) {
+
+    if (selection == "11") {
         cout << "Please input the new price for each Canned Beans: " << endl;
         cin >> value;
         list.at(10).setSellPrice(value);
@@ -132,20 +126,16 @@ int secondpage()
         return secondpage();
     }
 
-    if (selection == 12) {
+    if (selection == "12") {
         cout << "Please input the new price for each Peanuts: " << endl;
         cin >> value;
         list.at(11).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return secondpage();
     }
-
-    while (selection >= 13) {
-        cout << "Invalid selection, to return to the homepage, please input 0: ";
-        std::cin >> selection;
+    else {
+        cout << "Please select valid number \n";
+        Sleep(2000);
+        return secondpage();
     }
-
-    cout << "\n\n\n\n\n\n\n\n";
-    
-    return main();
 }
