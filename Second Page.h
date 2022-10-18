@@ -43,6 +43,10 @@ int secondpage()
     Item temp;
     cout << "\n\n\n\n\n\n\n\n\n\n\n";
 
+    if (selection == "0") {
+        return main();
+    }
+
     if (selection == "1") {
         cout << "Please input the new price for each Apple: " << endl;
         cin >> value;
