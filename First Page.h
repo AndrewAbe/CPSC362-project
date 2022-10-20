@@ -1,0 +1,64 @@
+#pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <iomanip>
+
+
+
+using namespace std;
+int firstpage();
+int main();
+
+int firstpage()
+{
+    system("CLS");
+    string filename;
+    filename = "Fruit_Inventory.csv";
+
+    vector<vector<string>> content;
+    vector<string> row;
+    string line, word;
+
+    fstream file(filename, ios::in);
+    if (file.is_open())
+    {
+        while (getline(file, line))
+        {
+            row.clear();
+
+            stringstream str(line);
+
+            while (getline(str, word, ','))
+                row.push_back(word);
+            content.push_back(row);
+        }
+    }
+    else
+        cout << "Could not open the file\n";
+
+
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        for (int j = 0; j < content[i].size(); j++)
+        {
+            cout << left << setw(15) << content[i][j];
+        }
+        cout << "\n";
+    }
+
+    cout << "\n\n\n\n";
+
+
+    std::cout << "To return to the homepage, please press any key ";
+
+    string selection;
+    std::cin >> selection;
+
+    cout << "\n\n\n";
+
+    return main();
+}
