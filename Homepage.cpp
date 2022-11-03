@@ -58,7 +58,7 @@ int main()
         return thirdpage();
     }
     else if (userinput == "4") {
-        return fourthpage();;
+        return fourthpage();
     }
     else if (userinput == "5") {
         std::cout << "Closing program...";
