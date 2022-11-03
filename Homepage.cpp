@@ -33,6 +33,7 @@ int main()
     std::cout << "2. Setting Prices\n";
     std::cout << "3. End of Day\n";
     std::cout << "4. Total Costs\n";
+    std::cout << "5. Close program\n";
 
     cout << "\n\n\n\n\n\n\n\n\n\n";
 
@@ -61,6 +62,11 @@ int main()
 
         return extrapage();
 
+    }
+    if (userinput == "5") {
+        cout << "Closing application..." << endl;
+        Sleep(2000);
+        return 0;
     }
     else {
         cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
