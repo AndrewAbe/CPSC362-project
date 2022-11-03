@@ -45,9 +45,10 @@ int fourthpage()
             goodquantity -= userinput;
             x += (userinput * list.at(i).getSellPrice());
             cout << (goodquantity - userinputperish) << " left sold at " << list.at(i).getSellPrice() << " gives total money " << x << "\n"; //check
-            Sleep(5000);
+            list.at(i).setQuantity(goodquantity - userinputperish);
+            //cout << (list.at(i).getQuantity());
+            //Sleep(10000);
             Sleep(1000);
-            list.at(i).setQuantity((list.at(i).getQuantity() - fin));
             endexcel(fname, list, x);
         }
         else {
