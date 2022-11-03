@@ -32,10 +32,10 @@ int fourthpage()
         string name = list.at(i).getName();
 
 
-        MISTAKE:SetConsoleTextAttribute(h, 27);
+    MISTAKE:SetConsoleTextAttribute(h, 27);
         cout << "Total number of items at the beginning of day was " << goodquantity << " for " << name << "\n\n";
         SetConsoleTextAttribute(h, 15);
-        cout << "Please input the total number of this item sold today:" ;
+        cout << "Please input the total number of this item sold today:";
         cin >> userinput;
 
         cout << "\n\n";
