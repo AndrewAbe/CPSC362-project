@@ -46,292 +46,100 @@ int thirdpage()
         return main();
     }
     else if (selection == "1") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Apple: " << endl;
-            cin >> value;
-            list.at(0).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for each Apple: " << endl;
-            cin >> value;
-            list.at(0).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(0).getQuantity() << " of " << list.at(0).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(0).setQuantity((list.at(0).getQuantity() + value));
+        x -= (value * list.at(0).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "2") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Banana: " << endl;
-            cin >> value;
-            list.at(1).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        if (selection == "1") {
-            cout << "Please input the new purchase price for each Banana: " << endl;
-            cin >> value;
-            list.at(1).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(1).getQuantity() << " of " << list.at(1).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(1).setQuantity((list.at(1).getQuantity() + value));
+        x -= (value * list.at(1).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "3") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Blueberry: " << endl;
-            cin >> value;
-            list.at(2).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for each Blueberry: " << endl;
-            cin >> value;
-            list.at(2).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(2).getQuantity() << " of " << list.at(2).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(2).setQuantity((list.at(2).getQuantity() + value));
+        x -= (value * list.at(2).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "4") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Grape: " << endl;
-            cin >> value;
-            list.at(3).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for each Grape: " << endl;
-            cin >> value;
-            list.at(3).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(3).getQuantity() << " of " << list.at(3).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(3).setQuantity((list.at(3).getQuantity() + value));
+        x -= (value * list.at(3).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "5") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Lemon: " << endl;
-            cin >> value;
-            list.at(4).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for each Lemon: " << endl;
-            cin >> value;
-            list.at(4).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(4).getQuantity() << " of " << list.at(4).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(4).setQuantity((list.at(4).getQuantity() + value));
+        x -= (value * list.at(4).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "6") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Orange: " << endl;
-            cin >> value;
-            list.at(5).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        if (selection == "1") {
-            cout << "Please input the new purchase price for each Orange: " << endl;
-            cin >> value;
-            list.at(0).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(5).getQuantity() << " of " << list.at(5).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(5).setQuantity((list.at(5).getQuantity() + value));
+        x -= (value * list.at(5).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "7") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Mango: " << endl;
-            cin >> value;
-            list.at(6).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for each Mango: " << endl;
-            cin >> value;
-            list.at(6).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(6).getQuantity() << " of " << list.at(6).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(6).setQuantity((list.at(6).getQuantity() + value));
+        x -= (value * list.at(6).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "8") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Watermelon: " << endl;
-            cin >> value;
-            list.at(7).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for each Watermelon: " << endl;
-            cin >> value;
-            list.at(7).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(7).getQuantity() << " of " << list.at(7).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(7).setQuantity((list.at(7).getQuantity() + value));
+        x -= (value * list.at(7).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "9") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for each Twinkie: " << endl;
-            cin >> value;
-            list.at(8).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for each Twinkie: " << endl;
-            cin >> value;
-            list.at(8).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(8).getQuantity() << " of " << list.at(8).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(8).setQuantity((list.at(8).getQuantity() + value));
+        x -= (value * list.at(8).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "10") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for Beef Jerky: " << endl;
-            cin >> value;
-            list.at(9).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for Beef Jerky: " << endl;
-            cin >> value;
-            list.at(9).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(9).getQuantity() << " of " << list.at(9).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(9).setQuantity((list.at(9).getQuantity() + value));
+        x -= (value * list.at(9).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "11") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for a Can of Beans: " << endl;
-            cin >> value;
-            list.at(10).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for a Can of Beans: " << endl;
-            cin >> value;
-            list.at(10).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(10).getQuantity() << " of " << list.at(10).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(10).setQuantity((list.at(10).getQuantity() + value));
+        x -= (value * list.at(10).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else if (selection == "12") {
-        cout << "Please select 0 if you want to change the sell price or select 1 for purchase price \n";
-        cin >> selection;
-        if (selection == "0") {
-            cout << "Please input the new sell price for Peanuts: " << endl;
-            cin >> value;
-            list.at(11).setSellPrice(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else if (selection == "1") {
-            cout << "Please input the new purchase price for Peanuts: " << endl;
-            cin >> value;
-            list.at(11).setPurchaseCost(value);
-            endexcel("Fruit_Inventory.csv", list, x);
-            return secondpage();
-        }
-        else {
-            SetConsoleTextAttribute(h, 4);
-            cout << "Invalid selection please try again";
-            Sleep(2000);
-            return secondpage();
-        }
+        cout << "There are " << list.at(11).getQuantity() << " of " << list.at(11).getName() << " left, how many would you like to purchase?" << endl;
+        cin >> value;
+        list.at(11).setQuantity((list.at(11).getQuantity() + value));
+        x -= (value * list.at(11).getPurchaseCost());
+        endexcel("Fruit_Inventory.csv", list, x);
+        return thirdpage();
     }
     else {
         SetConsoleTextAttribute(h, 4);
