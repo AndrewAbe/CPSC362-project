@@ -33,8 +33,9 @@ int main()
 
     std::cout << "1. List of Product and Prices\n";
     std::cout << "2. Setting Prices\n";
-    std::cout << "3. Purchase Invenory\n";
+    std::cout << "3. Purchase Inventory\n";
     std::cout << "4. End of Day\n";
+    std::cout << "5. Close program\n";
     std::cout << "Type in favorite fruit for surprise (lowercase) \n";
 
     cout << "\n\n\n\n\n\n\n\n\n\n";
@@ -59,9 +60,15 @@ int main()
     else if (userinput == "4") {
         return fourthpage();;
     }
+    else if (userinput == "5") {
+        std::cout << "Closing program...";
+        Sleep(2000);
+        return 0;
+    }
     else if (userinput == "orange") {
         return extrapage();
     }
+
     else {
         cout << "\n\n";
         SetConsoleTextAttribute(h, 4);

@@ -31,12 +31,12 @@ int fourthpage()
         double userinput = 0;
         double userinputperish = 0;
         string name = list.at(i).getName();
-        cout << "Total amount of items at begging of day is " << goodquantity << " for " << name << "\n";
-        MISTAKE:cout << "Please put amound of items sold at the end of day for " << name << "\n";
+        cout << "Total amount of items at beginning of day is " << goodquantity << " for " << name << ".\n";
+        MISTAKE:cout << "Please enter amount of items sold at the end of day for " << name << ": ";
         cin >> userinput; 
         //perishables
         if (i < 8) {
-            cout << "Please put amound of items that went bad during the day\n";
+            cout << "Please put amount of items that perished during the day: ";
             cin >> userinputperish;
         }
         double fin = userinputperish + userinput;
