@@ -6,13 +6,15 @@
 #include <sstream>
 #include <iomanip>
 #include <Windows.h>
+#include <stdlib.h>
+
 using namespace std;
 
 int main();
 int extrapage();
 
 int extrapage() {
-
+    system("CLS");
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
     SetConsoleTextAttribute(h, 12);
@@ -60,13 +62,14 @@ int extrapage() {
                  / ,"'"\,'               `/  `-.|"  )";
 
     SetConsoleTextAttribute(h, 15);
+    cout << "\n\n\n\n\n\n\n";
 
     std::cout << "\nTo return to the homepage, please input zero: ";
 
     int selection;
     std::cin >> selection;
 
-    cout << "\n\n\n\n\n\n\n\n\n\n\n";
+    cout << "\n\n\n\n\n\n";
 
     if (selection == 0) {
         return main();
@@ -75,6 +78,4 @@ int extrapage() {
         cout << "Invalid selection, to return to the homepage, please input 0: ";
         std::cin >> selection;
     }
-
-    cout << "\n\n\n\n\n\n\n\n";
 }

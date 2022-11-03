@@ -63,6 +63,32 @@ private:
     double _Quantity;
 };
 
+//inhereted function
+class Perishables : public Item {
+public:
+    //constructors
+    Perishables() {
+        _expired = 0;
+    };
+    //get private variables
+    double getExpired() {
+        return _expired;
+    }
+    //set functions
+    void setExpired(double e) {
+        _expired = e;
+    };
+    //print
+    void print() {
+        cout << getName() << " is sold at " << getSellPrice() <<
+            " purchased at " << getPurchaseCost() <<
+            " and has quantity of " << getQuantity() << " with " << _expired << " items that went bad today" << "\n";
+    }
+
+private:
+    double _expired; //used to see how many items went bad
+};
+
 //public open function so it doesn't clunk up main
 void printVec(vector<Item>& list) {
     for (int i = 0; i < list.size(); i++)
@@ -113,8 +139,8 @@ void openexcel(string fname, vector<Item>& list, double& tot) {
                 }
             }
         }
-    //    cout << "list size " << list.size() << "\n";  //use when testing
-    //    printVec(list);  //use when testing
+        //    cout << "list size " << list.size() << "\n";  //use when testing
+        //    printVec(list);  //use when testing
     }
     else {
         cout << "Could not open the file\n";

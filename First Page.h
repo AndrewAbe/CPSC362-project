@@ -14,9 +14,9 @@ int main();
 
 int firstpage()
 {
+    system("CLS");
     string filename;
     filename = "Fruit_Inventory.csv";
-    cout << " \n\n\n\n\n\n";
 
     vector<vector<string>> content;
     vector<string> row;
@@ -53,22 +53,12 @@ int firstpage()
     cout << "\n\n\n\n";
 
 
-    std::cout << "To return to the homepage, please input zero: ";
+    std::cout << "To return to the homepage, please press any key ";
 
-    int selection;
+    string selection;
     std::cin >> selection;
 
-    cout << "\n\n\n\n\n\n\n\n\n\n\n";
+    cout << "\n\n\n";
 
-    if (selection == 0) {
-        return main();
-    }
-    while (selection != 0) {
-        cout << "Invalid selection, to return to the homepage, please input 0: ";
-        std::cin >> selection;
-    }
-
-    cout << "\n\n\n\n\n\n\n\n";
-    
     return main();
 }

@@ -12,7 +12,7 @@
 using namespace std;
 int main();
 
-int secondpage()
+int thirdpage()
 {
     system("CLS");
     string fname = "Fruit_Inventory.csv";
