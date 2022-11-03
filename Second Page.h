@@ -36,6 +36,7 @@ int secondpage()
 
     std::cout << "Please input your selection: ";
 
+    //have to make string or else it will completely crash if anything but int was input from user
     string selection;
     double value;
     std::cin >> selection;
