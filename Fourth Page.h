@@ -35,7 +35,7 @@ int fourthpage()
     MISTAKE:SetConsoleTextAttribute(h, 27);
         cout << "Total number of items at the beginning of day was " << goodquantity << " for " << name << "\n\n";
         SetConsoleTextAttribute(h, 15);
-        cout << "Please input the total number of this item sold today:";
+        cout << "Please input the total number of this item sold today: ";
         cin >> userinput;
 
         cout << "\n\n";
@@ -43,7 +43,7 @@ int fourthpage()
 
         //perishables
         if (i < 8) {
-            cout << "Please input the total number of this perishable item that was tossed or went bad today:";
+            cout << "Please input the total number of this perishable item that was tossed or went bad today: ";
             cin >> userinputperish;
             cout << "\n\n";
         }
