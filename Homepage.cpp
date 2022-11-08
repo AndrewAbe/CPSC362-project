@@ -33,7 +33,7 @@ int main()
 
     std::cout << "1. List of Product and Prices\n";
     std::cout << "2. Setting Prices\n";
-    std::cout << "3. Purchase Invenory\n";
+    std::cout << "3. Purchase Inventory\n";
     std::cout << "4. End of Day\n";
     std::cout << "5. Close application\n";
     std::cout << "Type in favorite fruit for surprise (lowercase) \n";
