@@ -27,14 +27,14 @@ void secondrefac(int usernum) {
     if (selection == "0") {
         cout << "Please input the new sell price for each " << list.at(usernum).getName() << ":" << endl;
         cin >> value;
-        list.at(0).setSellPrice(value);
+        list.at(usernum).setSellPrice(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return;
     }
     else if (selection == "1") {
         cout << "Please input the new purchase price for each " << list.at(usernum).getName() << ":" << endl;
         cin >> value;
-        list.at(0).setPurchaseCost(value);
+        list.at(usernum).setPurchaseCost(value);
         endexcel("Fruit_Inventory.csv", list, x);
         return;
     }
