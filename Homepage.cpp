@@ -71,7 +71,7 @@ int main()
     else {
         cout << "\n\n";
         SetConsoleTextAttribute(h, 4);
-        cout << "Invalid Selection! Please input a number between 1 and 4!\n" << endl;
+        cout << "Invalid Selection! Please input a number between 1 and 5!\n" << endl;
         SetConsoleTextAttribute(h, 15);
         Sleep(2000);
         main();
